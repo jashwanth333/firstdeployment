@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7cfb9dd7-8cd4-4025-8e1e-75ce237b8d88">
+		<http:listener-connection host="0.0.0.0" port="8010" />
+	</http:listener-config>
+	<flow name="firstclouddeploymentFlow" doc:id="b31d03ba-3b2b-41a6-af91-aab1551521b5" >
+		<http:listener doc:name="Listener" doc:id="0e9ab11d-876b-4c51-a8b1-a8d382dc66d7" config-ref="HTTP_Listener_config" path="deploy"/>
+		<logger level="INFO" doc:name="Logger" doc:id="a4f6223e-f1ac-4fc1-85d1-b27dce88edda" message='#["hi iam learning mule 4 series of vedios"]'/>
+	</flow>
+</mule>
